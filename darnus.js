@@ -215,13 +215,12 @@ answerButtons.onclick = (e) => {
 
     console.log(randomPrompt.correct_answer)
     if (userAnswer === randomPrompt.correct_answer) {
-        document.getElementById(userAnswer).className = 'btn btn-success';
+        document.getElementById(userAnswer).className = 'btn btn-success answer-button';
         streakCounter++;
         correct = true;
-        nextPrompt();
     }
     else {
-        e.target.className = 'btn btn-danger';
+        e.target.className = 'btn btn-danger answer-button';
         streakCounter = 0;
     }
     let streak = document.getElementById('streak');
