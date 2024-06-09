@@ -96,55 +96,12 @@ var prompts = [
         correct_answer: 'back'
     }
 ];
-// {
-//     prompt: 'O hallowed moon, take fire and scorch my foes!',
-//     a: ['lunar_dynamo', 'thermiotic_beam']
-// },
-// {
-//     prompt: 'O hallowed moon, shine you the iron path!',
-//     a: ['lunar_dynamo', 'iron_chariot']
-// },
-// {
-//     prompt: 'Blazing path, lead me to iron rule!',
-//     a: ['thermiotic_beam', 'iron_chariot']
-// },
-// {
-//     prompt: 'Take fire, O hallowed moon!',
-//     a: ['thermiotic_beam', 'lunar_dynamo']
-// },
-// {
-//     prompt: 'From on high I descend, the iron path to call!',
-//     a: ['ravens_dive', 'iron_chariot']
-// },
-// {
-//     prompt: 'From on high I descend, the iron path to walk!',
-//     a: ['ravens_dive', 'iron_chariot']
-// },
-// {
-//     prompt: 'From on high I descend, the hallowed moon to call!',
-//     a: ['ravens_dive', 'lunar_dynamo']
-// },
-// {
-//     prompt: "Fleeting light! 'Neath the red moon, scorch you the earth!",
-//     a: ['dalamud_dive', 'thermiotic_beam']
-// },
-// {
-//     prompt: 'Fleeting light! Amid a rain of stars, exalt you the red moon!',
-//     a: ['meteor_stream', 'dalamud_dive']
-// },
-// ]
 
-//var ANSWERS = ['lunar_dynamo', 'thermiotic_beam', 'iron_chariot', 'ravens_dive', 'dalamud_dive', 'meteor_stream'];
-// var ANSWERS = ['left', 'right', 'front', 'back'];
-// var answer = [];
-// var inputAnswer = [];
 var streakCounter = 0;
 var correct = false;
-// var lastPrompt = 0;
 var timeLimit = 0;
 var timeoutEnabled = false;
 var timeoutHandle;
-// var wrong = 0;
 
 function getRandomPrompt() {
     const randomIndex = Math.floor(Math.random() * prompts.length);
@@ -225,20 +182,22 @@ function renderImages(prompt) {
 
 let randomPrompt = getRandomPrompt();
 renderImages(randomPrompt);
-//
-// let prompt = document.getElementById('prompt');
-// let n = Math.floor(Math.random() * prompts.length);
-// prompt.innerText = prompts[n].prompt;
-// answer = prompts[n].a;
-var nextButton = document.getElementById('next');
 
+var nextButton = document.getElementById('next');
 function resetButtonStyles() {
-const answerButtons = document.querySelectorAll('.answer-button');
-    answerButtons.forEach((a) => {
-        a.className = 'btn btn-primary';
+    const answerButtons = document.querySelectorAll('.answer-button');
+    console.log(answerButtons)
+    answerButtons.forEach((button) => {
+        button.className = 'btn btn-primary answer-button';
+        console.log(button)
     });
 }
+
 nextButton.onclick = () => {
+    nextPrompt();
+}
+
+function nextPrompt() {
     correct = false;
     resetButtonStyles();
     startTimerIfEnabled();
@@ -246,29 +205,6 @@ nextButton.onclick = () => {
     renderImages(randomPrompt);
     console.log(randomPrompt);
 }
-//
-//
-// var nextButton = document.getElementById('next');
-// nextButton.onclick = () => {
-//     correct = false;
-//     startTimerIfEnabled();
-//
-//     let prompt = document.getElementById('prompt');
-//
-//     prompt.className = 'd-inline';
-//     ANSWERS.forEach((a) => {
-//         console.log(a);
-//         let answerButton = document.getElementById(a);
-//         answerButton.className = 'btn btn-primary';
-//     });
-//
-//     let n = 1 + Math.floor(Math.random() * (prompts.length-1));
-//     n = (lastPrompt + n) % prompts.length;
-//     lastPrompt = n;
-//     prompt.innerText = prompts[n].prompt;
-//     answer = prompts[n].a;
-//     inputAnswer = [];
-// }
 
 var answerButtons = document.getElementById('answerButtons');
 answerButtons.onclick = (e) => {
@@ -277,10 +213,12 @@ answerButtons.onclick = (e) => {
 
     let userAnswer = e.target.id;
 
-    if (userAnswer === prompt.answer) {
+    console.log(randomPrompt.correct_answer)
+    if (userAnswer === randomPrompt.correct_answer) {
         document.getElementById(userAnswer).className = 'btn btn-success';
         streakCounter++;
         correct = true;
+        nextPrompt();
     }
     else {
         e.target.className = 'btn btn-danger';
@@ -321,7 +259,7 @@ function resetTimer() {
 }
 
 function failure() {
-    if (correct === false) {
+    if (!correct) {
         streakCounter = 0;
         let streak = document.getElementById('streak');
         streak.innerText = `Streak: ${streakCounter}`;
