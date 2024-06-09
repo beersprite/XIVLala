@@ -1,10 +1,101 @@
 var prompts = [
     {
         hole_direction: 'front',
+        steps: 'III',
+        rotation: 'CW',
+        correct_answer: 'left'
+    },
+    {
+        hole_direction: 'front',
+        steps: 'V',
+        rotation: 'CW',
+        correct_answer: 'right'
+    },
+    {
+        hole_direction: 'front',
+        steps: 'III',
+        rotation: 'CCW',
+        correct_answer: 'right'
+    },
+    {
+        hole_direction: 'front',
         steps: 'V',
         rotation: 'CCW',
         correct_answer: 'left'
     },
+    {
+        hole_direction: 'right',
+        steps: 'III',
+        rotation: 'CW',
+        correct_answer: 'front'
+    },
+    {
+        hole_direction: 'right',
+        steps: 'V',
+        rotation: 'CW',
+        correct_answer: 'back'
+    },
+    {
+        hole_direction: 'right',
+        steps: 'III',
+        rotation: 'CCW',
+        correct_answer: 'back'
+    },
+    {
+        hole_direction: 'right',
+        steps: 'V',
+        rotation: 'CCW',
+        correct_answer: 'front'
+    },
+    {
+        hole_direction: 'back',
+        steps: 'III',
+        rotation: 'CW',
+        correct_answer: 'right'
+    },
+    {
+        hole_direction: 'back',
+        steps: 'V',
+        rotation: 'CW',
+        correct_answer: 'left'
+    },
+    {
+        hole_direction: 'back',
+        steps: 'III',
+        rotation: 'CCW',
+        correct_answer: 'left'
+    },
+    {
+        hole_direction: 'back',
+        steps: 'V',
+        rotation: 'CCW',
+        correct_answer: 'right'
+    },
+    {
+        hole_direction: 'left',
+        steps: 'III',
+        rotation: 'CW',
+        correct_answer: 'back'
+    },
+    {
+        hole_direction: 'left',
+        steps: 'V',
+        rotation: 'CW',
+        correct_answer: 'front'
+    },
+    {
+        hole_direction: 'left',
+        steps: 'III',
+        rotation: 'CCW',
+        correct_answer: 'front'
+    },
+    {
+        hole_direction: 'left',
+        steps: 'V',
+        rotation: 'CCW',
+        correct_answer: 'back'
+    }
+];
     // {
     //     prompt: 'O hallowed moon, take fire and scorch my foes!',
     //     a: ['lunar_dynamo', 'thermiotic_beam']
@@ -41,7 +132,7 @@ var prompts = [
     //     prompt: 'Fleeting light! Amid a rain of stars, exalt you the red moon!',
     //     a: ['meteor_stream', 'dalamud_dive']
     // },
-]
+// ]
 
 var ANSWERS = ['lunar_dynamo', 'thermiotic_beam', 'iron_chariot', 'ravens_dive', 'dalamud_dive', 'meteor_stream'];
 var answer = [];
