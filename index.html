@@ -14,28 +14,52 @@
 <div class="m-5">
     <!-- Header -->
     <div>
-        <h1 class="d-flex">The Lala</h1>
+        <h1 class="">The Lala</h1>
         <h2 id="streak">Streak: 0</h2>
     </div>
     <hr>
 
     <!-- Answer pane -->
-    <div style="padding-top:20px; padding-bottom:20px;">
-        <div class="my-2">
-            <div id="images-container" class="m-3 width-100"></div>
-            <h3 class="d-inline">Show hole!</h3>
-            <button type="button" class="btn btn-primary" id="next">Next</button>
+    <div class="m-3 d-flex flex-column align-items-center ">
+        <div class="my-3 text-center">
+            <div id="images-container" class="m-3 w-100" style="height: 200px"></div>
+            <h3>Show hole!</h3>
+            <button type="button" class="btn btn-secondary btn-sm" id="next">Next</button>
         </div>
 
-        <div id="answerButtons" class="m-3">
-            <div class="btn-group-vertical m-1">
-                <button type="button" class="btn btn-primary" id="front">front</button>
-                <div class="btn-group-horizontal m-1">
-                    <button type="button" class="btn btn-primary" id="left">left</button>
-                    <button type="button" class="btn btn-primary" id="right">right</button>
+        <div id="answerButtons" class="m-3 container col" style="width: 250px;">
+            <div class="row my-1">
+                <div class="col-sm">
                 </div>
-                <button type="button" class="btn btn-primary" id="back">back</button>
+                <div class="col-sm">
+                    <button type="button" class="btn btn-primary" id="front">Front</button>
+                </div>
+                <div class="col-sm">
+                </div>
             </div>
+
+            <div class="row my-1">
+                <div class="col-sm">
+                    <button type="button" class="btn btn-primary" id="left">Left</button>
+                </div>
+                <div class="col-sm">
+                </div>
+                <div class="col-sm">
+                    <button type="button" class="btn btn-primary" id="right">Right</button>
+                </div>
+            </div>
+
+            <div class="row my-1">
+                <div class="col-sm">
+                </div>
+                <div class="col-sm">
+                    <button type="button" class="btn btn-primary" id="back">Back</button>
+                </div>
+                <div class="col-sm">
+                </div>
+
+            </div>
+
         </div>
     </div>
 
@@ -43,18 +67,18 @@
 
     <!-- Settings Pane -->
     <div>
-        <h3>Settings:</h3>
+        <h3>Settings</h3>
 
-        <div style="margin-left:30px;">
+        <div class="m-3">
             <!-- Time Limit checkbox -->
-            <div style="margin-left:20px;">
+            <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="timeLimitEnabled" value="false" onchange="timerEnableToggled(this)">
                 <label class="form-check-label" for="timeLimitEnabled">Enable Timer</label>
             </div>
             <br/>
             <!-- Time Limit input -->
             <label for="timeLimitInput">Time Limit (seconds)</label>
-            <input disabled type="number" class="form-control" id="timeLimitInput" style="width: 200px; display:block;" value="3">
+            <input disabled type="number" class="form-control" id="timeLimitInput" style="width: 200px; display:block;" value="7">
         </div>
     </div>
 
@@ -62,8 +86,8 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<!--    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 </div>

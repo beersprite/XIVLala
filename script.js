@@ -168,6 +168,7 @@ function renderRotationImage(prompt, div) {
     const imageElement = document.createElement('img');
     imageElement.src = imageSrc;
     imageElement.classList.add('m-3');
+    imageElement.classList.add('w-25');
     div.appendChild(imageElement);
 }
 
@@ -208,13 +209,12 @@ function nextPrompt() {
 
 var answerButtons = document.getElementById('answerButtons');
 answerButtons.onclick = (e) => {
-    if (e.target.id === 'answerButtons') return;
-    console.log(e.target.id);
-
     let userAnswer = e.target.id;
 
     console.log(randomPrompt.correct_answer)
-    if (userAnswer === randomPrompt.correct_answer) {
+    console.log('user clicou em',userAnswer)
+    if (!userAnswer) return;
+    else if (userAnswer === randomPrompt.correct_answer) {
         document.getElementById(userAnswer).className = 'btn btn-success answer-button';
         streakCounter++;
         correct = true;
