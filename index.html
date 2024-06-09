@@ -11,27 +11,31 @@
     <title>Another Aloalo Island Quiz: The Lala</title>
 </head>
 <body>
-<div style="margin:5px;">
+<div class="m-5">
     <!-- Header -->
     <div>
         <h1 class="d-flex">The Lala</h1>
         <h2 id="streak">Streak: 0</h2>
     </div>
-
     <hr>
 
     <!-- Answer pane -->
     <div style="padding-top:20px; padding-bottom:20px;">
         <div class="my-2">
-            <button type="button" class="btn btn-primary d-inline" id="next">Next</button>
-            <h3 class="d-inline" id="prompt">Show hole!</h3>
+            <div id="images-container" class="m-3 width-100"></div>
+            <h3 class="d-inline">Show hole!</h3>
+            <button type="button" class="btn btn-primary" id="next">Next</button>
         </div>
 
         <div id="answerButtons">
-            <button type="button" class="btn btn-primary" id="front">front</button>
-            <button type="button" class="btn btn-primary" id="right">right</button>
-            <button type="button" class="btn btn-primary" id="left">left</button>
-            <button type="button" class="btn btn-primary" id="back">back</button>
+            <div class="btn-group-vertical m-1" >
+                <button type="button" class="btn btn-primary answer-button" id="front">front</button>
+                <div class="btn-group-horizontal m-1">
+                    <button type="button" class="btn btn-primary answer-button" id="left">left</button>
+                    <button type="button" class="btn btn-primary answer-button" id="right">right</button>
+                </div>
+                <button type="button" class="btn btn-primary answer-button" id="back">back</button>
+            </div>
         </div>
     </div>
 
@@ -41,17 +45,17 @@
     <div>
         <h3>Settings:</h3>
 
-            <div style="margin-left:30px;">
-                <!-- Time Limit checkbox -->
-                <div style="margin-left:20px;">
-                    <input type="checkbox" class="form-check-input" id="timeLimitEnabled" value="false" onchange="timerEnableToggled(this)">
-                    <label class="form-check-label" for="timeLimitEnabled">Enable Timer</label>
-                </div>
-                <br/>
-                <!-- Time Limit input -->
-                <label for="timeLimitInput">Time Limit (seconds)</label>
-                <input disabled type="number" class="form-control" id="timeLimitInput" style="width: 200px; display:block;" value="3">
+        <div style="margin-left:30px;">
+            <!-- Time Limit checkbox -->
+            <div style="margin-left:20px;">
+                <input type="checkbox" class="form-check-input" id="timeLimitEnabled" value="false" onchange="timerEnableToggled(this)">
+                <label class="form-check-label" for="timeLimitEnabled">Enable Timer</label>
             </div>
+            <br/>
+            <!-- Time Limit input -->
+            <label for="timeLimitInput">Time Limit (seconds)</label>
+            <input disabled type="number" class="form-control" id="timeLimitInput" style="width: 200px; display:block;" value="3">
+        </div>
     </div>
 
     <script src="darnus.js"></script>
