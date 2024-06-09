@@ -134,7 +134,8 @@ var prompts = [
     // },
 // ]
 
-var ANSWERS = ['lunar_dynamo', 'thermiotic_beam', 'iron_chariot', 'ravens_dive', 'dalamud_dive', 'meteor_stream'];
+//var ANSWERS = ['lunar_dynamo', 'thermiotic_beam', 'iron_chariot', 'ravens_dive', 'dalamud_dive', 'meteor_stream'];
+var ANSWERS = ['left', 'right', 'front', 'back'];
 var answer = [];
 var inputAnswer = [];
 var numCorrect = 0; // yeah yeah this naming is confusing
@@ -145,10 +146,86 @@ var timeoutEnabled = false;
 var timeoutHandle;
 // var wrong = 0;
 
-let prompt = document.getElementById('prompt');
-let n = Math.floor(Math.random() * prompts.length);
-prompt.innerText = prompts[n].prompt;
-answer = prompts[n].a;
+function getRandomPrompt() {
+    const randomIndex = Math.floor(Math.random() * prompts.length);
+    return prompts[randomIndex];
+}
+
+function renderHoleDirectionImage(prompt) {
+    let imageSrc = '';
+    switch (prompt.hole_direction) {
+        case 'front':
+            imageSrc = 'assets/015369_hr1.png';
+            break;
+        case 'right':
+            imageSrc = 'assets/015939_hr1.png';
+            break;
+        case 'left':
+            imageSrc = 'assets/015940_hr1.png';
+            break;
+        case 'back':
+            imageSrc = 'assets/015941_hr1.png';
+            break;
+        default:
+            imageSrc = '';
+    }
+
+    const imageElement = document.createElement('img');
+    imageElement.src = imageSrc;
+    document.body.appendChild(imageElement);
+}
+
+function renderStepsImage(prompt) { // not used at the moment, but may b
+    let imageSrc = '';
+    switch (prompt.steps) {
+        case 'III':
+            imageSrc = 'assets/016748_hr1.png';
+            break;
+        case 'V':
+            imageSrc = 'assets/016747_hr1.png';
+            break;
+        default:
+            imageSrc = '';
+    }
+
+    const imageElement = document.createElement('img');
+    imageElement.src = imageSrc;
+    document.body.appendChild(imageElement);
+}
+
+function renderRotationImage(prompt) {
+    let imageSrc = '';
+    switch (prompt.rotation) {
+        case 'CW':
+            imageSrc = 'assets/CW.png';
+            break;
+        case 'CCW':
+            imageSrc = 'assets/CCW.png';
+            break;
+        default:
+            imageSrc = '';
+    }
+
+    const imageElement = document.createElement('img');
+    imageElement.src = imageSrc;
+    document.body.appendChild(imageElement);
+}
+
+function renderImages(prompt) {
+    renderHoleDirectionImage(prompt);
+    renderStepsImage(prompt);
+    renderRotationImage(prompt);
+
+}
+
+const randomPrompt = getRandomPrompt();
+console.log(randomPrompt);
+renderImages(randomPrompt);
+//
+// let prompt = document.getElementById('prompt');
+// let n = Math.floor(Math.random() * prompts.length);
+// prompt.innerText = prompts[n].prompt;
+// answer = prompts[n].a;
 
 var nextButton = document.getElementById('next');
 nextButton.onclick = () => {
