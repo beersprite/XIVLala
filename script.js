@@ -213,7 +213,7 @@ answerButtons.onclick = (e) => {
 
     console.log(randomPrompt.correct_answer)
     console.log('user clicou em',userAnswer)
-    if (!userAnswer) return;
+    if (!userAnswer || userAnswer === "answerButtons") return;
     else if (userAnswer === randomPrompt.correct_answer) {
         document.getElementById(userAnswer).className = 'btn btn-success answer-button';
         streakCounter++;
