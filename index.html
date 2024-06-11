@@ -20,18 +20,15 @@
     </div>
     <hr>
 
-    <!-- Answer pane -->
-    <div class="d-flex justify-content-center">
-        <div class="d-flex flex-row justify-content-between" style="width: 1000px">
-            <div>
-                <p>
-                    <h2>
-                        <span class="badge text-bg-secondary" id="streak" aria-expanded="false" aria-controls="Streak score">
-                            Streak: 0
-                        </span>
-                    </h2>
-                </p>
-            <!-- Settings Pane -->
+    <div class="container">
+        <div class="row">
+            <div class="col align-self-center">
+                <h2>
+                    <span class="badge text-bg-secondary" id="streak" aria-expanded="false" aria-controls="Streak score">
+                        Streak: 0
+                    </span>
+                </h2>
+                <!-- Settings Pane -->
                 <button class="btn btn-outline-light btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTimerOptions" aria-expanded="false" aria-controls="collapseTimerOptions">
                     Settings
                 </button>
@@ -39,71 +36,74 @@
                     <div class="card card-body" style="width: 300px;">
                         <div class="m-3">
                             <!-- Time Limit checkbox -->
-                            <div class="form-check">
+                            <div class="form-check my-2">
                                 <input type="checkbox" class="form-check-input" id="timeLimitEnabled" value="false" onchange="timerEnableToggled(this)">
                                 <label class="form-check-label" for="timeLimitEnabled">Enable Timer</label>
                             </div>
-                            <br/>
                             <!-- Time Limit input -->
                             <label for="timeLimitInput">Time Limit (seconds)</label>
-                            <input disabled type="number" class="form-control" id="timeLimitInput" style="width: 200px; display:block;" value="7">
+                            <input disabled type="number" class="form-control my-2" id="timeLimitInput" style="width: 200px; display:block;" value="7">
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="m-3 d-flex flex-column align-items-center">
-                <div class="my-3 text-center">
-                    <div id="images-container" class="m-3 w-100" style="height: 200px"></div>
-                    <h3>Show hole!</h3>
-                    <button type="button" class="btn btn-secondary btn-sm" id="next">Next</button>
-                </div>
-
-                <div id="answerButtons" class="m-3 container col" style="width: 300px;">
-                    <div class="row my-1">
-                        <div class="col-lg-4">
-                        </div>
-                        <div class="col-lg-4">
-                            <button type="button" class="btn btn-outline-warning btn-lg" id="front">Front</button>
-                        </div>
-                        <div class="col-lg-4">
-                        </div>
+            <div class="col align-self-center">
+                <!-- Prompt pane -->
+                <div class="container">
+                    <div class="my-3">
+                        <div id="images-container" class="m-3"></div>
+                        <h3>Show hole!</h3>
+                        <button type="button" class="btn btn-secondary btn-sm" id="next">Next</button>
                     </div>
+                    <!-- Answer pane -->
+                    <div id="answerButtons" class="m-3 container">
+                        <div class="row g-2">
+                            <div class="col-sm-2">
+                            </div>
+                            <div class="col-sm-2">
+                                <button type="button" class="btn btn-outline-warning btn-lg" id="front">Front</button>
+                            </div>
+                            <div class="col-sm-2">
+                            </div>
+                        </div>
 
-                    <div class="row my-1">
-                        <div class="col-lg-4">
-                            <button type="button" class="btn btn-outline-warning btn-lg" id="left">Left</button>
+                        <div class="row g-2">
+                            <div class="col-sm-2">
+                                <button type="button" class="btn btn-outline-warning btn-lg" id="left">Left</button>
+                            </div>
+                            <div class="col-sm-2">
+                            </div>
+                            <div class="col-sm-2">
+                                <button type="button" class="btn btn-outline-warning btn-lg" id="right">Right</button>
+                            </div>
                         </div>
-                        <div class="col-lg-4">
-                        </div>
-                        <div class="col-lg-4">
-                            <button type="button" class="btn btn-outline-warning btn-lg" id="right">Right</button>
-                        </div>
-                    </div>
 
-                    <div class="row my-1">
-                        <div class="col-lg-4">
-                        </div>
-                        <div class="col-lg-4">
-                            <button type="button" class="btn btn-outline-warning btn-lg" id="back">Back</button>
-                        </div>
-                        <div class="col-lg-4">
+                        <div class="row g-2">
+                            <div class="col-sm-2">
+                            </div>
+                            <div class="col-sm-2">
+                                <button type="button" class="btn btn-outline-warning btn-lg" id="back">Back</button>
+                            </div>
+                            <div class="col-sm-2">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
     </div>
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </div>
 </body>
 <footer class="position-relative bottom-0 w-100">
