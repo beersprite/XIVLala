@@ -1,10 +1,11 @@
 <!doctype html>
-<html lang="en"  data-bs-theme="dark">
+<html lang="en" data-bs-theme="dark">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <meta name="description" content="Quiz to practice Analysis + Angular Addition for Lala boss in Another Aloalo Island Criterion and or Savage Dungeon in FFXIV">
+    <meta name="keywords" content="HTML, CSS, JavaScript, FFXIV, Another, Aloalo, Island, Lala, Criterion, Savage, Boss, Quiz">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
@@ -15,48 +16,78 @@
     <!-- Header -->
     <div>
         <h1 class="">The Lala</h1>
-        <h2 id="streak">Streak: 0</h2>
+        <h3 class="">FFXIV Another Aloalo Island</h3>
     </div>
     <hr>
 
     <!-- Answer pane -->
-    <div class="m-3 d-flex flex-column align-items-center ">
-        <div class="my-3 text-center">
-            <div id="images-container" class="m-3 w-100" style="height: 200px"></div>
-            <h3>Show hole!</h3>
-            <button type="button" class="btn btn-secondary btn-sm" id="next">Next</button>
-        </div>
+    <div class="d-flex justify-content-center">
+        <div class="d-flex flex-row justify-content-between" style="width: 1000px">
+            <!-- Settings Pane -->
+            <div class="">
+                <p>
+                <h2>
+                    <span class="badge text-bg-secondary" id="streak" aria-expanded="false" aria-controls="Streak score">
+                    Streak: 0
+                    </span>
+                </h2>
+                </p>
+                <div style="min-height: 120px;">
 
-        <div id="answerButtons" class="m-3 container col" style="width: 250px;">
-            <div class="row my-1">
-                <div class="col-sm">
-                </div>
-                <div class="col-sm">
-                    <button type="button" class="btn btn-primary" id="front">Front</button>
-                </div>
-                <div class="col-sm">
+                    <div class="card card-body" style="width: 300px;">
+                        <div class="m-3">
+                            <!-- Time Limit checkbox -->
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="timeLimitEnabled" value="false" onchange="timerEnableToggled(this)">
+                                <label class="form-check-label" for="timeLimitEnabled">Enable Timer</label>
+                            </div>
+                            <br/>
+                            <!-- Time Limit input -->
+                            <label for="timeLimitInput">Time Limit (seconds)</label>
+                            <input disabled type="number" class="form-control" id="timeLimitInput" style="width: 200px; display:block;" value="7">
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
-            <div class="row my-1">
-                <div class="col-sm">
-                    <button type="button" class="btn btn-primary" id="left">Left</button>
+            <div class="m-3 d-flex flex-column align-items-center">
+                <div class="my-3 text-center">
+                    <div id="images-container" class="m-3 w-100" style="height: 200px"></div>
+                    <h3>Show hole!</h3>
+                    <button type="button" class="btn btn-secondary btn-sm" id="next">Next</button>
                 </div>
-                <div class="col-sm">
-                </div>
-                <div class="col-sm">
-                    <button type="button" class="btn btn-primary" id="right">Right</button>
-                </div>
-            </div>
 
-            <div class="row my-1">
-                <div class="col-sm">
-                </div>
-                <div class="col-sm">
-                    <button type="button" class="btn btn-primary" id="back">Back</button>
-                </div>
-                <div class="col-sm">
-                </div>
+                <div id="answerButtons" class="m-3 container col" style="width: 250px;">
+                    <div class="row my-1">
+                        <div class="col-sm">
+                        </div>
+                        <div class="col-sm">
+                            <button type="button" class="btn btn-primary" id="front">Front</button>
+                        </div>
+                        <div class="col-sm">
+                        </div>
+                    </div>
+
+                    <div class="row my-1">
+                        <div class="col-sm">
+                            <button type="button" class="btn btn-primary" id="left">Left</button>
+                        </div>
+                        <div class="col-sm">
+                        </div>
+                        <div class="col-sm">
+                            <button type="button" class="btn btn-primary" id="right">Right</button>
+                        </div>
+                    </div>
+
+                    <div class="row my-1">
+                        <div class="col-sm">
+                        </div>
+                        <div class="col-sm">
+                            <button type="button" class="btn btn-primary" id="back">Back</button>
+                        </div>
+                        <div class="col-sm">
+                        </div>
 
             </div>
 
@@ -80,9 +111,13 @@
             <label for="timeLimitInput">Time Limit (seconds)</label>
             <input disabled type="number" class="form-control" id="timeLimitInput" style="width: 200px; display:block;" value="7">
         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-
+    </div>
 
     <script src="script.js"></script>
 
@@ -91,12 +126,12 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
 </div>
 </body>
+
 <footer class="p-3 text-center bg-dark-subtle fw-light text-secondary-emphasis fs-6">
-    <p>Based on <a class="link-secondary link-offset-2" href="https://harry-kwon.github.io/FFXIV-UCoB-Nael-Quiz/">FFXIV Nael Van Darnus Quiz</a></p>
-    <p>All images belong to Square Enix</p>
-    <p>Created with JS, HTML, CSS and Bootstrap</p>
+    <p>Based on <a class="link-secondary link-offset-2" href="https://harry-kwon.github.io/FFXIV-UCoB-Nael-Quiz/">Nael Van Darnus Quiz</a></p>
+    <p>ALL FINAL FANTASY XIV CONTENT IS PROPERTY OF SQUARE ENIX CO., LTD</p>
+    <p>Created in 2024 with JS, HTML, CSS and Bootstrap</p>
 </footer>
 </html>
