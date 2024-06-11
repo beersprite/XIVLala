@@ -1,5 +1,6 @@
 # XIVLala
-Quiz to practice Analysis + Angular Addition for Lala boss in Another Aloalo Island from FFXIV
+
+Quiz to practice Analysis + Angular Addition for Lala boss in Another Aloalo Island from FFXIV. [Play here!](https://beersprite.github.io/XIVLala/)
 
 You have an optional timer to practice reaction time. In-game you should have about 7 seconds to resolve the mechanic.
 
