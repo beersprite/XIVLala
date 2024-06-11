@@ -168,7 +168,8 @@ function renderRotationImage(prompt, div) {
     const imageElement = document.createElement('img');
     imageElement.src = imageSrc;
     imageElement.classList.add('m-3');
-    imageElement.classList.add('w-25');
+    imageElement.classList.add('rounded-circle');
+    imageElement.style = 'width: 150px; height: 150px; object-fit: cover; object-position: centered';
     div.appendChild(imageElement);
 }
 
