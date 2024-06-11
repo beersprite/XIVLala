@@ -12,9 +12,9 @@
     <title>Another Aloalo Island Quiz: The Lala</title>
 </head>
 <body>
-<div class="m-5">
+<div class="p-4">
     <!-- Header -->
-    <div>
+    <div class="text-center">
         <h1 class="">The Lala</h1>
         <h3 class="">FFXIV Another Aloalo Island</h3>
     </div>
@@ -24,16 +24,10 @@
     <div class="d-flex justify-content-center">
         <div class="d-flex flex-row justify-content-between" style="width: 1000px">
             <!-- Settings Pane -->
-            <div class="">
-                <p>
-                <h2>
-                    <span class="badge text-bg-secondary" id="streak" aria-expanded="false" aria-controls="Streak score">
-                    Streak: 0
-                    </span>
-                </h2>
-                </p>
-                <div style="min-height: 120px;">
-
+                <button class="btn btn-outline-light btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTimerOptions" aria-expanded="false" aria-controls="collapseTimerOptions">
+                    Settings
+                </button>
+                <div class="collapse show" id="collapseTimerOptions" style="min-height: 120px;">
                     <div class="card card-body" style="width: 300px;">
                         <div class="m-3">
                             <!-- Time Limit checkbox -->
@@ -47,7 +41,6 @@
                             <input disabled type="number" class="form-control" id="timeLimitInput" style="width: 200px; display:block;" value="7">
                         </div>
                     </div>
-
                 </div>
             </div>
 
@@ -58,37 +51,36 @@
                     <button type="button" class="btn btn-secondary btn-sm" id="next">Next</button>
                 </div>
 
-                <div id="answerButtons" class="m-3 container col" style="width: 250px;">
+                <div id="answerButtons" class="m-3 container col" style="width: 300px;">
                     <div class="row my-1">
-                        <div class="col-sm">
+                        <div class="col-lg-4">
                         </div>
-                        <div class="col-sm">
-                            <button type="button" class="btn btn-primary" id="front">Front</button>
+                        <div class="col-lg-4">
+                            <button type="button" class="btn btn-outline-warning btn-lg" id="front">Front</button>
                         </div>
-                        <div class="col-sm">
+                        <div class="col-lg-4">
                         </div>
                     </div>
 
                     <div class="row my-1">
-                        <div class="col-sm">
-                            <button type="button" class="btn btn-primary" id="left">Left</button>
+                        <div class="col-lg-4">
+                            <button type="button" class="btn btn-outline-warning btn-lg" id="left">Left</button>
                         </div>
-                        <div class="col-sm">
+                        <div class="col-lg-4">
                         </div>
-                        <div class="col-sm">
-                            <button type="button" class="btn btn-primary" id="right">Right</button>
+                        <div class="col-lg-4">
+                            <button type="button" class="btn btn-outline-warning btn-lg" id="right">Right</button>
                         </div>
                     </div>
 
                     <div class="row my-1">
-                        <div class="col-sm">
+                        <div class="col-lg-4">
                         </div>
-                        <div class="col-sm">
-                            <button type="button" class="btn btn-primary" id="back">Back</button>
+                        <div class="col-lg-4">
+                            <button type="button" class="btn btn-outline-warning btn-lg" id="back">Back</button>
                         </div>
-                        <div class="col-sm">
+                        <div class="col-lg-4">
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -106,10 +98,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </div>
 </body>
-
-<footer class="p-3 text-center bg-dark-subtle fw-light text-secondary-emphasis fs-6">
-    <p>Based on <a class="link-secondary link-offset-2" href="https://harry-kwon.github.io/FFXIV-UCoB-Nael-Quiz/">Nael Van Darnus Quiz</a></p>
-    <p>ALL FINAL FANTASY XIV CONTENT IS PROPERTY OF SQUARE ENIX CO., LTD</p>
-    <p>Created in 2024 with JS, HTML, CSS and Bootstrap</p>
+<footer class="position-relative bottom-0 w-100">
+    <div class="p-3 text-center bg-dark-subtle fw-light text-secondary-emphasis fs-6">
+        <p>Based on <a class="link-secondary link-offset-2" href="https://harry-kwon.github.io/FFXIV-UCoB-Nael-Quiz/">Nael Van Darnus Quiz</a></p>
+        <p>ALL FINAL FANTASY XIV CONTENT IS PROPERTY OF SQUARE ENIX CO., LTD</p>
+        <p>Created in 2024 with JS, HTML, CSS and Bootstrap</p>
+    </div>
 </footer>
 </html>

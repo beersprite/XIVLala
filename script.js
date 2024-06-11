@@ -189,7 +189,7 @@ function resetButtonStyles() {
     const answerButtons = document.querySelectorAll('.answer-button');
     console.log(answerButtons)
     answerButtons.forEach((button) => {
-        button.className = 'btn btn-primary answer-button';
+        button.className = 'btn btn-outline-warning btn-lg answer-button';
         console.log(button)
     });
 }
@@ -215,12 +215,12 @@ answerButtons.onclick = (e) => {
     console.log('user clicou em',userAnswer)
     if (!userAnswer || userAnswer === "answerButtons") return;
     else if (userAnswer === randomPrompt.correct_answer) {
-        document.getElementById(userAnswer).className = 'btn btn-success answer-button';
+        document.getElementById(userAnswer).className = 'btn btn-success btn-lg answer-button';
         streakCounter++;
         correct = true;
     }
     else {
-        e.target.className = 'btn btn-danger answer-button';
+        e.target.className = 'btn btn-danger btn-lg answer-button';
         streakCounter = 0;
     }
     let streak = document.getElementById('streak');
